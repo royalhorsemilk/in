@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Royal Horse Milk | Premium Milk</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fffdf8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 2px 15px rgba(0,0,0,.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 7%;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #8b5e16;
+    }
+
+    .logo span {
+      color: #222;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+    }
+
+    nav ul a:hover {
+      color: #b47b21;
+    }
+
+    .menu {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+      background:
+        linear-gradient(90deg, rgba(255,250,235,.97), rgba(255,250,235,.65)),
+        url("https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      color: #6e4810;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #222;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #a66d16;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #754b0c;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      margin-left: 10px;
+      background: transparent;
+      color: #8b5e16;
+      border: 2px solid #8b5e16;
+    }
+
+    .btn-outline:hover {
+      color: white;
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #704a12;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.07);
+    }
+
+    .feature .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: #704a12;
+      margin-bottom: 8px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      background: #f8f1e3;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 25px;
+    }
+
+    .product-info h3 {
+      font-size: 23px;
+      color: #704a12;
+    }
+
+    .price {
+      color: #b27617;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 10px 0 18px;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .about h2 {
+      font-size: 40px;
+      color: #704a12;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    /* ORDER */
+    .order {
+      background: linear-gradient(135deg, #704a12, #b47b21);
+      color: white;
+      text-align: center;
+    }
+
+    .order h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .order p {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    .order .btn {
+      background: white;
+      color: #704a12;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.07);
+    }
+
+    .stars {
+      color: #e5a620;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .review h4 {
+      margin-top: 15px;
+      color: #704a12;
+    }
+
+    /* CONTACT */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.07);
+    }
+
+    .contact-box h3 {
+      color: #704a12;
+      margin-bottom: 20px;
+      font-size: 27px;
+    }
+
+    .contact-item {
+      margin: 15px 0;
+      font-size: 17px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #17130d;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer h2 {
+      color: #d6a144;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px) {
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        min-height: 600px;
+        padding: 50px 7%;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .features,
+      .product-grid,
+      .reviews {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .features,
+      .product-grid,
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 12px 22px;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      Royal <span>Horse Milk</span>
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <ul id="navMenu">
+      <li><a href="#home">হোম</a></li>
+      <li><a href="#products">পণ্য</a></li>
+      <li><a href="#about">আমাদের সম্পর্কে</a></li>
+      <li><a href="#reviews">রিভিউ</a></li>
+      <li><a href="#contact">যোগাযোগ</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>
+        Royal <span>Horse Milk</span>
+      </h1>
+
+      <p>
+        প্রিমিয়াম মানের Horse Milk আপনার প্রতিদিনের জীবনযাত্রায়
+        যোগ করুক একটি বিশেষ অভিজ্ঞতা।
+      </p>
+
+      <a href="#products" class="btn">
+        পণ্য দেখুন
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        অর্ডার করুন
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section>
+    <div class="section-title">
+      <h2>কেন Royal Horse Milk?</h2>
+      <p>গুণমান ও যত্নের প্রতি আমাদের প্রতিশ্রুতি</p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="icon">🥛</div>
+        <h3>প্রিমিয়াম কোয়ালিটি</h3>
+        <p>মানসম্মত উপাদান ও যত্নের সাথে প্রস্তুত।</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🌿</div>
+        <h3>বিশুদ্ধতা</h3>
+        <p>পরিচ্ছন্নতা ও মান নিয়ন্ত্রণকে গুরুত্ব দেওয়া হয়।</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🚚</div>
+        <h3>দ্রুত ডেলিভারি</h3>
+        <p>আপনার ঠিকানায় সুবিধাজনক ডেলিভারি।</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">⭐</div>
+        <h3>বিশ্বস্ত সেবা</h3>
+        <p>গ্রাহকের সন্তুষ্টিই আমাদের প্রধান লক্ষ্য।</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <div class="section-title">
+      <h2>আমাদের পণ্য</h2>
+      <p>আপনার পছন্দের Royal Horse Milk</p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=80"
+          alt="Royal Horse Milk"
+        >
+
+        <div class="product-info">
+          <h3>Royal Horse Milk</h3>
+          <p>Premium quality milk package.</p>
+
+          <div class="price">
+            ৳ 1,200
+          </div>
+
+          <button class="btn" onclick="orderProduct('Royal Horse Milk')">
+            অর্ডার করুন
+          </button>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=900&q=80"
+          alt="Premium Milk"
+        >
+
+        <div class="product-info">
+          <h3>Premium Pack</h3>
+          <p>Special premium milk package.</p>
+
+          <div class="price">
+            ৳ 2,000
+          </div>
+
+          <button class="btn" onclick="orderProduct('Premium Pack')">
+            অর্ডার করুন
+          </button>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=80"
+          alt="Family Pack"
+        >
+
+        <div class="product-info">
+          <h3>Family Pack</h3>
+          <p>Family size premium package.</p>
+
+          <div class="price">
+            ৳ 3,500
+          </div>
+
+          <button class="btn" onclick="orderProduct('Family Pack')">
+            অর্ডার করুন
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="about">
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1528498033373-3c6c8d5d8b5b?auto=format&fit=crop&w=1000&q=80"
+          alt="Horse"
+        >
+      </div>
+
+      <div>
+        <h2>Royal Horse Milk</h2>
+
+        <p>
+          Royal Horse Milk একটি premium milk brand হিসেবে
+          গুণমান, পরিচ্ছন্নতা এবং গ্রাহক সন্তুষ্টিকে গুরুত্ব দেয়।
+        </p>
+
+        <p>
+          আমাদের লক্ষ্য হলো গ্রাহকদের জন্য একটি সুন্দর ও
+          নির্ভরযোগ্য milk experience তৈরি করা।
+        </p>
+
+        <a href="#contact" class="btn">
+          আমাদের সাথে যোগাযোগ করুন
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORDER -->
+  <section class="order">
+
+    <h2>আজই অর্ডার করুন</h2>
+
+    <p>
+      Royal Horse Milk সম্পর্কে জানতে বা অর্ডার করতে
+      আমাদের সাথে যোগাযোগ করুন।
+    </p>
+
+    <a href="#contact" class="btn">
+      অর্ডার করুন
+    </a>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+
+    <div class="section-title">
+      <h2>গ্রাহকদের মতামত</h2>
+      <p>আমাদের কিছু গ্রাহকের অভিজ্ঞতা</p>
+    </div>
+
+    <div class="reviews">
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "প্যাকেজিং সুন্দর এবং সার্ভিসও ভালো লেগেছে।"
+        </p>
+        <h4>— Rahim</h4>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "ডেলিভারি দ্রুত পেয়েছি। পুরো experience ভালো ছিল।"
+        </p>
+        <h4>— Karim</h4>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Royal Horse Milk-এর presentation অনেক সুন্দর।"
+        </p>
+        <h4>— Sumaiya</h4>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="section-title">
+      <h2>যোগাযোগ করুন</h2>
+      <p>অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন</p>
+    </div>
+
+    <div class="contact">
+
+      <div class="contact-box">
+
+        <h3>Royal Horse Milk</h3>
+
+        <div class="contact-item">
+          📞 ফোন: <strong>01XXXXXXXXX</strong>
+        </div>
+
+        <div class="contact-item">
+          📧 Email: example@email.com
+        </div>
+
+        <div class="contact-item">
+          📍 ঠিকানা: Dhaka, Bangladesh
+        </div>
+
+        <div class="contact-item">
+          🕐 প্রতিদিন: সকাল ৯টা — রাত ১০টা
+        </div>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>অর্ডার ফর্ম</h3>
+
+        <form onsubmit="submitOrder(event)">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="আপনার নাম"
+            required
+          >
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="মোবাইল নম্বর"
+            required
+          >
+
+          <textarea
+            id="message"
+            placeholder="আপনার অর্ডারের বিস্তারিত লিখুন"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">
+            অর্ডার পাঠান
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>Royal Horse Milk</h2>
+
+    <p>
+      © 2026 Royal Horse Milk. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/8801XXXXXXXXX"
+    target="_blank"
+    title="WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+      document
+        .getElementById("navMenu")
+        .classList
+        .toggle("active");
+
+    }
+
+
+    /* PRODUCT ORDER */
+
+    function orderProduct(product) {
+
+      document.getElementById("message").value =
+        "আমি " + product + " অর্ডার করতে চাই।";
+
+      document
+        .getElementById("contact")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* ORDER FORM */
+
+    function submitOrder(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const message =
+        document.getElementById("message").value;
+
+      const whatsappNumber = "8801XXXXXXXXX";
+
+      const text =
+        "Royal Horse Milk Order%0A%0A" +
+        "নাম: " + encodeURIComponent(name) +
+        "%0Aফোন: " + encodeURIComponent(phone) +
+        "%0Aঅর্ডার: " + encodeURIComponent(message);
+
+      window.open(
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        text,
+        "_blank"
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
