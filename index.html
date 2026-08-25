@@ -1,867 +1,1512 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Royal Horse Milk | Premium Milk</title>
+<title>Royal Horse Milk | Official Order</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --green:#123d2a;
+    --dark:#08261a;
+    --gold:#c78b18;
+    --light:#f7f5ef;
+    --white:#ffffff;
+    --text:#26362e;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    font-family:'Hind Siliguri',sans-serif;
+    background:#fafafa;
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+img{max-width:100%;}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#fff;
+    padding:12px 0;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:Georgia,serif;
+    color:#9b6814;
+    font-size:23px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.logo small{font-size:14px;}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#26362e;
+    font-weight:600;
+}
+
+.phone-btn{
+    background:var(--gold);
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:570px;
+    background:linear-gradient(90deg,
+    rgba(255,255,255,.98) 0%,
+    rgba(255,255,255,.9) 38%,
+    rgba(19,51,36,.78) 100%);
+    display:flex;
+    align-items:center;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+    padding:50px 0;
+}
+
+.natural-badge{
+    display:inline-block;
+    background:var(--green);
+    border:2px solid #d4a331;
+    color:#f7d47e;
+    padding:9px 20px;
+    border-radius:30px;
+    font-family:Poppins,sans-serif;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.brand-title{
+    font-family:Georgia,serif;
+    color:#9a6613;
+    font-size:48px;
+    line-height:1.05;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.3;
+    color:#173e2d;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#b27612;
+    background:#fff3d7;
+    padding:0 8px;
+}
+
+.hero p{
+    font-size:19px;
+    color:#3e4b44;
+    margin-bottom:25px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#174632;
+    color:white;
+    text-decoration:none;
+    padding:15px 32px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Hero Image */
+
+.hero-image-area{
+    position:relative;
+}
+
+.hero-image-box{
+    width:100%;
+    height:470px;
+    overflow:hidden;
+    border-radius:15px;
+    background:#35463b;
+}
+
+.hero-image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.image-note{
+    text-align:center;
+    margin-top:12px;
+    background:#123d2a;
+    color:#f4cf72;
+    padding:10px 25px;
+    border-radius:30px;
+    width:max-content;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight:bold;
+}
+
+/* ================= COMMON ================= */
+
+section{padding:65px 0;}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#263e33;
+}
+
+.section-title p{
+    color:#777;
+    font-size:17px;
+}
+
+/* ================= WHY US ================= */
+
+.reasons-section{
+    background:#f4f2ed;
+}
+
+.reason-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.reason-card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    display:flex;
+    gap:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.reason-card:hover{
+    transform:translateY(-4px);
+}
+
+.reason-icon{
+    min-width:48px;
+    height:48px;
+    background:#edf4ee;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:22px;
+}
+
+.reason-card h3{
+    color:#17432e;
+    font-size:18px;
+}
+
+.reason-card p{
+    color:#666;
+    font-size:14px;
+    line-height:1.5;
+    margin-top:5px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-section{background:#f7f5f0;}
+
+.video-box{
+    max-width:800px;
+    margin:auto;
+    background:#333;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.video-box video{
+    width:100%;
+    display:block;
+}
+
+/* =================================================
+   CERTIFICATE SECTION - NEW
+================================================= */
+
+.certificate-section{
+    background:#fff;
+    padding-bottom:55px;
+    overflow:hidden;
+}
+
+.certificate-title{
+    text-align:center;
+    font-size:38px;
+    line-height:1.25;
+    color:#195c35;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.certificate-title span{
+    color:#1e6c3f;
+}
+
+.cert-slider-wrapper{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.cert-track{
+    display:flex;
+    gap:12px;
+    width:max-content;
+    animation:certificateMove 28s linear infinite;
+}
+
+.cert-slider-wrapper:hover .cert-track{
+    animation-play-state:paused;
+}
+
+.cert-card{
+    width:275px;
+    height:205px;
+    flex-shrink:0;
+    background:#f4f4f4;
+    border:1px solid #ddd;
+    overflow:hidden;
+}
+
+.cert-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* অটো Carousel Animation */
+
+@keyframes certificateMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* Certificate Text */
+
+.certificate-content{
+    max-width:1180px;
+    margin:35px auto 0;
+    padding:0 15px;
+    color:#252525;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.certificate-content p{
+    margin-bottom:15px;
+}
+
+.cert-features{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    font-weight:500;
+}
+
+.cert-note{
+    margin-top:22px;
+    font-weight:600;
+}
+
+/* ================= FAQ ================= */
+
+.faq-section{background:#f5f5f5;}
+
+.faq-box{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:#fff;
+    border:1px solid #d5d5d5;
+    margin-bottom:8px;
+}
+
+.faq-question{
+    width:100%;
+    background:white;
+    border:none;
+    padding:14px 18px;
+    text-align:left;
+    font-family:'Hind Siliguri',sans-serif;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-question span{
+    color:var(--gold);
+    font-size:22px;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+    background:#fafafa;
+}
+
+.faq-answer p{
+    padding:15px 20px 20px;
+    color:#555;
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    max-height:300px;
+}
+
+.faq-item.active .faq-question{
+    color:#c23b2b;
+}
+
+
+/* ================= IMAGE GALLERY CAROUSEL ================= */
+
+.gallery-section{
+    background:#f7f5f0;
+    padding:65px 0;
+    overflow:hidden;
+}
+
+.gallery-slider{
+    position:relative;
+    max-width:1050px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.gallery-track{
+    display:flex;
+    transition:transform .6s ease-in-out;
+}
+
+.gallery-slide{
+    min-width:100%;
+    padding:5px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:230px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
+    background:#ddd;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-controls{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.gallery-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#bbb;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-dot.active{
+    background:#17432e;
+    width:28px;
+    border-radius:10px;
+}
+
+@media(max-width:800px){
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .gallery-item{
+        height:160px;
     }
 
-    body {
-      background: #fffdf8;
-      color: #222;
-      line-height: 1.6;
+}
+
+
+/* ================= REVIEWS ================= */
+
+.review-section{background:white;}
+
+.review-carousel{
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.review-track{
+    display:flex;
+    transition:.5s ease;
+}
+
+.review-slide{
+    min-width:100%;
+    padding:10px;
+}
+
+.review-card{
+    background:white;
+    padding:28px;
+    border-radius:15px;
+    box-shadow:0 6px 25px rgba(0,0,0,.09);
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.review-photo{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.stars{
+    color:#c78b18;
+    font-size:21px;
+}
+
+.review-name{
+    font-weight:bold;
+    color:#17432e;
+    margin-top:7px;
+}
+
+.carousel-dots{
+    text-align:center;
+    margin-top:15px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    background:#ccc;
+    display:inline-block;
+    border-radius:50%;
+    margin:0 4px;
+}
+
+.dot.active{background:#17432e;}
+
+/* ================= ORDER ================= */
+
+.order-section{
+    background:#f4f4f4;
+}
+
+.checkout-box{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:28px;
+    box-shadow:0 4px 20px rgba(0,0,0,.12);
+}
+
+.checkout-title{
+    text-align:center;
+    color:#c53124;
+    margin-bottom:20px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.package-select-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.package-option{
+    border:1px solid #bbb;
+    padding:16px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    min-height:90px;
+}
+
+.package-option.selected{
+    border:2px solid #56a66a;
+    background:#f8fff9;
+}
+
+.package-option h3{font-size:17px;}
+
+.package-option p{
+    color:#c78b18;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:35px;
+}
+
+.billing-title,
+.summary-title{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#444;
+}
+
+.billing-form label{
+    display:block;
+    font-size:14px;
+    margin:12px 0 5px;
+}
+
+.billing-form input,
+.billing-form textarea{
+    width:100%;
+    border:1px solid #ccc;
+    padding:12px;
+    font-family:'Hind Siliguri',sans-serif;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px dashed #ccc;
+    font-size:14px;
+}
+
+.summary-product{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.summary-product img{
+    width:45px;
+    height:45px;
+    object-fit:cover;
+}
+
+.total-row{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.order-now-btn{
+    width:100%;
+    border:none;
+    background:#ff1e16;
+    color:white;
+    padding:16px;
+    margin-top:20px;
+    font-family:'Hind Siliguri',sans-serif;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#071c13;
+    color:#ddd;
+    padding:28px 0;
+    text-align:center;
+}
+
+.footer-items{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    color:#d7b55e;
+    margin-bottom:12px;
+}
+
+.float-whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:28px;
+    text-decoration:none;
+    z-index:999;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .nav-links{display:none;}
+
+    .hero-grid,
+    .reason-grid,
+    .package-select-grid,
+    .checkout-grid{
+        grid-template-columns:1fr;
     }
 
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.96);
-      box-shadow: 0 2px 15px rgba(0,0,0,.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 7%;
+    .hero h1{font-size:32px;}
+
+    .brand-title{font-size:38px;}
+
+    .hero-image-box{height:330px;}
+
+    .certificate-title{
+        font-size:28px;
+        padding:0 15px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #8b5e16;
+    .cert-card{
+        width:230px;
+        height:175px;
     }
 
-    .logo span {
-      color: #222;
+    .certificate-content{
+        font-size:16px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
+    .review-card{
+        flex-direction:column;
+        text-align:center;
     }
 
-    nav ul a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 600;
-    }
+    .checkout-box{padding:18px;}
+}
 
-    nav ul a:hover {
-      color: #b47b21;
-    }
-
-    .menu {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      padding: 70px 8%;
-      background:
-        linear-gradient(90deg, rgba(255,250,235,.97), rgba(255,250,235,.65)),
-        url("https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.1;
-      color: #6e4810;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #222;
-    }
-
-    .hero p {
-      font-size: 19px;
-      margin-bottom: 30px;
-      color: #444;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #a66d16;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: .3s;
-    }
-
-    .btn:hover {
-      background: #754b0c;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      margin-left: 10px;
-      background: transparent;
-      color: #8b5e16;
-      border: 2px solid #8b5e16;
-    }
-
-    .btn-outline:hover {
-      color: white;
-    }
-
-    /* SECTION */
-    section {
-      padding: 80px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      color: #704a12;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #666;
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .feature {
-      background: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.07);
-    }
-
-    .feature .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .feature h3 {
-      color: #704a12;
-      margin-bottom: 8px;
-    }
-
-    /* PRODUCTS */
-    .products {
-      background: #f8f1e3;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.08);
-      transition: .3s;
-    }
-
-    .product:hover {
-      transform: translateY(-7px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 25px;
-    }
-
-    .product-info h3 {
-      font-size: 23px;
-      color: #704a12;
-    }
-
-    .price {
-      color: #b27617;
-      font-size: 25px;
-      font-weight: bold;
-      margin: 10px 0 18px;
-    }
-
-    /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .about img {
-      width: 100%;
-      border-radius: 20px;
-    }
-
-    .about h2 {
-      font-size: 40px;
-      color: #704a12;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    /* ORDER */
-    .order {
-      background: linear-gradient(135deg, #704a12, #b47b21);
-      color: white;
-      text-align: center;
-    }
-
-    .order h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .order p {
-      margin-bottom: 25px;
-      font-size: 18px;
-    }
-
-    .order .btn {
-      background: white;
-      color: #704a12;
-    }
-
-    /* REVIEWS */
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .review {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.07);
-    }
-
-    .stars {
-      color: #e5a620;
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .review h4 {
-      margin-top: 15px;
-      color: #704a12;
-    }
-
-    /* CONTACT */
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-box {
-      background: white;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.07);
-    }
-
-    .contact-box h3 {
-      color: #704a12;
-      margin-bottom: 20px;
-      font-size: 27px;
-    }
-
-    .contact-item {
-      margin: 15px 0;
-      font-size: 17px;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    form textarea {
-      height: 120px;
-      resize: none;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #17130d;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer h2 {
-      color: #d6a144;
-      margin-bottom: 10px;
-    }
-
-    footer p {
-      color: #bbb;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #25d366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 5px 20px rgba(0,0,0,.2);
-      z-index: 999;
-    }
-
-    /* MOBILE */
-    @media(max-width: 900px) {
-
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu {
-        display: block;
-      }
-
-      .hero {
-        min-height: 600px;
-        padding: 50px 7%;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .features,
-      .product-grid,
-      .reviews {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about,
-      .contact {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width: 600px) {
-
-      section {
-        padding: 60px 5%;
-      }
-
-      .features,
-      .product-grid,
-      .reviews {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .btn {
-        padding: 12px 22px;
-      }
-
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-
-      .section-title h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
-<img src="back.png" alt="Image" whidth="1200px" height="300px" >
-  <!-- NAVBAR -->
-  <nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+<div class="container nav">
+
     <div class="logo">
-      Royal <span>Horse Milk</span>
+        🐎 ROYAL<br>
+        <small>HORSE MILK</small>
     </div>
 
-    <div class="menu" onclick="toggleMenu()">☰</div>
-
-    <ul id="navMenu">
-      <li><a href="#home">হোম</a></li>
-      <li><a href="#products">পণ্য</a></li>
-      <li><a href="#about">আমাদের সম্পর্কে</a></li>
-      <li><a href="#reviews">রিভিউ</a></li>
-      <li><a href="#contact">যোগাযোগ</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-
-      <h1>
-        Royal <span>Horse Milk</span>
-      </h1>
-
-      <p>
-        প্রিমিয়াম মানের Horse Milk আপনার প্রতিদিনের জীবনযাত্রায়
-        যোগ করুক একটি বিশেষ অভিজ্ঞতা।
-      </p>
-
-      <a href="#products" class="btn">
-        পণ্য দেখুন
-      </a>
-
-      <a href="#contact" class="btn btn-outline">
-        অর্ডার করুন
-      </a>
-
-    </div>
-  </section>
-
-
-  <!-- FEATURES -->
-  <section>
-    <div class="section-title">
-      <h2>কেন Royal Horse Milk?</h2>
-      <p>গুণমান ও যত্নের প্রতি আমাদের প্রতিশ্রুতি</p>
+    <div class="nav-links">
+        <a href="#home">হোম</a>
+        <a href="#why">কেন আমাদের</a>
+        <a href="#certificate">সার্টিফিকেট</a>
+        <a href="#faq">প্রশ্নোত্তর</a>
+        <a href="#review">রিভিউ</a>
     </div>
 
-    <div class="features">
+    <a href="#order" class="phone-btn">অর্ডার করুন</a>
 
-      <div class="feature">
-        <div class="icon">🥛</div>
-        <h3>প্রিমিয়াম কোয়ালিটি</h3>
-        <p>মানসম্মত উপাদান ও যত্নের সাথে প্রস্তুত।</p>
-      </div>
+</div>
+</header>
 
-      <div class="feature">
-        <div class="icon">🌿</div>
-        <h3>বিশুদ্ধতা</h3>
-        <p>পরিচ্ছন্নতা ও মান নিয়ন্ত্রণকে গুরুত্ব দেওয়া হয়।</p>
-      </div>
 
-      <div class="feature">
-        <div class="icon">🚚</div>
-        <h3>দ্রুত ডেলিভারি</h3>
-        <p>আপনার ঠিকানায় সুবিধাজনক ডেলিভারি।</p>
-      </div>
+<!-- ================= HERO ================= -->
 
-      <div class="feature">
-        <div class="icon">⭐</div>
-        <h3>বিশ্বস্ত সেবা</h3>
-        <p>গ্রাহকের সন্তুষ্টিই আমাদের প্রধান লক্ষ্য।</p>
-      </div>
+<section class="hero" id="home">
+<div class="container hero-grid">
 
+    <div>
+        <div class="natural-badge">100% NATURAL & HERBAL</div>
+
+        <div class="brand-title">
+            ROYAL<br>HORSE MILK
+        </div>
+
+        <h1>
+            সারারাত খেলেও পারবে<br>
+            <span>এক কাপ খেলেই</span> নতুন অনুভূতি
+        </h1>
+
+        <p>প্রিমিয়াম মানের বিশেষ পণ্য — আপনার পছন্দের অফারটি আজই বেছে নিন।</p>
+
+        <a href="#order" class="hero-btn">এখনই অর্ডার করুন →</a>
     </div>
-  </section>
+
+    <!-- আপনার Hero Image -->
+    <div class="hero-image-area">
+        <div class="hero-image-box">
+            <img src="hero-product.jpg"
+                 alt="Royal Horse Milk"
+                 onerror="this.style.display='none'">
+        </div>
+
+        <div class="image-note">🌿 প্রিমিয়াম কোয়ালিটি</div>
+    </div>
+
+</div>
+</section>
 
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
+<!-- ================= 6 REASONS ================= -->
+
+<section class="reasons-section" id="why">
+<div class="container">
 
     <div class="section-title">
-      <h2>আমাদের পণ্য</h2>
-      <p>আপনার পছন্দের Royal Horse Milk</p>
+        <h2>কেন আমাদের পণ্য নিবেন?</h2>
+        <p>আমাদের পণ্য বেছে নেওয়ার ৬টি গুরুত্বপূর্ণ কারণ</p>
     </div>
 
-    <div class="product-grid">
+    <div class="reason-grid">
 
-      <div class="product">
-
-        <img
-          src="21.png"
-          alt="Royal Horse Milk"
-        >
-
-        <div class="product-info">
-          <h3>Royal Horse Milk</h3>
-          <p>Premium quality milk package.</p>
-
-          <div class="price">
-            3 pac 900 tk
-          </div>
-
-          <button class="btn" onclick="orderProduct('Royal Horse Milk')">
-            অর্ডার করুন
-          </button>
+        <div class="reason-card">
+            <div class="reason-icon">🌿</div>
+            <div>
+                <h3>প্রিমিয়াম উপাদান</h3>
+                <p>বাছাইকৃত উপাদান দিয়ে প্রস্তুত মানসম্মত পণ্য।</p>
+            </div>
         </div>
 
-      </div>
-
-
-      <div class="product">
-
-        <img
-          src="image.jpg"
-          alt="Premium Milk"
-        >
-
-        <div class="product-info">
-          <h3>Premium Pack</h3>
-          <p>Special premium milk package.</p>
-
-          <div class="price">
-            5 pac 1200 tk
-          </div>
-
-          <button class="btn" onclick="orderProduct('Premium Pack')">
-            অর্ডার করুন
-          </button>
+        <div class="reason-card">
+            <div class="reason-icon">🏆</div>
+            <div>
+                <h3>মানের প্রতি যত্ন</h3>
+                <p>গুণগত মান বজায় রাখার প্রতি বিশেষ গুরুত্ব দেওয়া হয়।</p>
+            </div>
         </div>
 
-      </div>
-
-
-      <div class="product">
-
-        <img
-          src="royel.png"
-          alt="Family Pack"
-        >
-
-        <div class="product-info">
-          <h3>Family Pack</h3>
-          <p>Family size premium package.</p>
-
-          <div class="price">
-            10 pac 1850 tk
-          </div>
-
-          <button class="btn" onclick="orderProduct('Family Pack')">
-            অর্ডার করুন
-          </button>
+        <div class="reason-card">
+            <div class="reason-icon">📦</div>
+            <div>
+                <h3>নিরাপদ প্যাকেজিং</h3>
+                <p>যত্নসহকারে প্যাকিং করে আপনার কাছে পাঠানো হয়।</p>
+            </div>
         </div>
 
-      </div>
+        <div class="reason-card">
+            <div class="reason-icon">🚚</div>
+            <div>
+                <h3>সারা দেশে ডেলিভারি</h3>
+                <p>বাংলাদেশের বিভিন্ন এলাকায় ডেলিভারি সুবিধা রয়েছে।</p>
+            </div>
+        </div>
+
+        <div class="reason-card">
+            <div class="reason-icon">💵</div>
+            <div>
+                <h3>ক্যাশ অন ডেলিভারি</h3>
+                <p>পণ্য গ্রহণের সময় পেমেন্ট করার সুবিধা।</p>
+            </div>
+        </div>
+
+        <div class="reason-card">
+            <div class="reason-icon">💬</div>
+            <div>
+                <h3>সহজ অর্ডার ব্যবস্থা</h3>
+                <p>WhatsApp-এর মাধ্যমে সহজে অর্ডারের তথ্য পাঠাতে পারবেন।</p>
+            </div>
+        </div>
 
     </div>
-  </section>
+</div>
+</section>
 
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ================= VIDEO ================= -->
 
-    <div class="about">
-
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1528498033373-3c6c8d5d8b5b?auto=format&fit=crop&w=1000&q=80"
-          alt="Horse"
-        >
-      </div>
-
-      <div>
-        <h2>Royal Horse Milk</h2>
-
-        <p>
-          Royal Horse Milk একটি premium milk brand হিসেবে
-          গুণমান, পরিচ্ছন্নতা এবং গ্রাহক সন্তুষ্টিকে গুরুত্ব দেয়।
-        </p>
-
-        <p>
-          আমাদের লক্ষ্য হলো গ্রাহকদের জন্য একটি সুন্দর ও
-          নির্ভরযোগ্য milk experience তৈরি করা।
-        </p>
-
-        <a href="#contact" class="btn">
-          আমাদের সাথে যোগাযোগ করুন
-        </a>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ORDER -->
-  <section class="order">
-
-    <h2>আজই অর্ডার করুন</h2>
-
-    <p>
-      Royal Horse Milk সম্পর্কে জানতে বা অর্ডার করতে
-      আমাদের সাথে যোগাযোগ করুন।
-    </p>
-
-    <a href="#contact" class="btn">
-      অর্ডার করুন
-    </a>
-
-  </section>
-
-
-  <!-- REVIEWS -->
-  <section id="reviews">
+<section class="video-section">
+<div class="container">
 
     <div class="section-title">
-      <h2>গ্রাহকদের মতামত</h2>
-      <p>আমাদের কিছু গ্রাহকের অভিজ্ঞতা</p>
+        <h2>প্রোডাক্ট ভিডিও</h2>
+        <p>ভিডিও দেখে পণ্য সম্পর্কে আরও জানুন</p>
     </div>
 
-    <div class="reviews">
+    <div class="video-box">
+        <video controls poster="hero-product.jpg">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
 
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>
-          "প্যাকেজিং সুন্দর এবং সার্ভিসও ভালো লেগেছে।"
-        </p>
-        <h4>— Rahim</h4>
-      </div>
+</div>
+</section>
 
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>
-          "ডেলিভারি দ্রুত পেয়েছি। পুরো experience ভালো ছিল।"
-        </p>
-        <h4>— Karim</h4>
-      </div>
 
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>
-          "Royal Horse Milk-এর presentation অনেক সুন্দর।"
-        </p>
-        <h4>— Sumaiya</h4>
-      </div>
+<!-- ====================================================
+     CERTIFICATE CAROUSEL - আপনার ছবির মতো নতুন Section
+==================================================== -->
+
+<section class="certificate-section" id="certificate">
+
+    <h2 class="certificate-title">
+        ১০০% নিরাপদ ও অনুমোদিত<br>
+        <span>সার্টিফিকেটসমূহ</span>
+    </h2>
+
+    <div class="cert-slider-wrapper">
+
+        <div class="cert-track">
+
+            <!-- প্রথম ৪টি Certificate -->
+            <div class="cert-card">
+                <img src="certificate1.jpg" alt="Certificate 1">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate2.jpg" alt="Certificate 2">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate3.jpg" alt="Certificate 3">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate4.jpg" alt="Certificate 4">
+            </div>
+
+            <!-- একই ছবি আবার দেওয়া হয়েছে যাতে Carousel শেষ না হয়ে চলতে থাকে -->
+            <div class="cert-card">
+                <img src="certificate1.jpg" alt="Certificate 1">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate2.jpg" alt="Certificate 2">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate3.jpg" alt="Certificate 3">
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate4.jpg" alt="Certificate 4">
+            </div>
+
+        </div>
 
     </div>
 
-  </section>
+
+    <!-- Certificate-এর নিচের লেখার অংশ -->
+
+    <div class="certificate-content">
+
+        <p>
+            Royal Horse Milk Premium Instant Powder একটি বিশেষভাবে প্রস্তুত পণ্য।
+            পণ্যের গুণগত মান, উপাদান ও উৎপাদন প্রক্রিয়া সম্পর্কে বিস্তারিত তথ্য
+            প্যাকেটের লেবেল এবং প্রযোজ্য নথিপত্রে উল্লেখ থাকবে।
+        </p>
+
+        <p>
+            ১০০% প্রাকৃতিক ও নির্বাচিত উপাদানের সমন্বয়ে প্রস্তুত এই পণ্যটি
+            ব্যবহার করার আগে প্যাকেটের নির্দেশনা ভালোভাবে পড়ে নেওয়ার পরামর্শ দেওয়া হয়।
+            কোনো উপাদানে ব্যক্তিগত সংবেদনশীলতা থাকলে ব্যবহার করার আগে বিশেষজ্ঞের
+            পরামর্শ নিন।
+        </p>
+
+        <p>
+            ☕ <b>ব্যবহারের নিয়ম:</b> প্যাকেটের নির্দেশনা অনুযায়ী পরিমাণমতো পানীয়ের
+            সাথে মিশিয়ে ব্যবহার করুন। সঠিক সংরক্ষণ ও ব্যবহারের নির্দেশনা অনুসরণ করুন।
+        </p>
+
+        <div class="cert-features">
+            <div>🔥 Better Performance & Great Satisfaction</div>
+            <div>✅ Satisfied Product & Improved Pleasure & Endurance</div>
+        </div>
+
+        <div class="cert-note">
+            ***ফলাফল ব্যক্তি ও ব্যবহারভেদে ভিন্ন হতে পারে।***
+        </div>
+
+    </div>
+
+</section>
 
 
-  <!-- CONTACT -->
-  <section id="contact">
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section" id="faq">
+<div class="container">
 
     <div class="section-title">
-      <h2>যোগাযোগ করুন</h2>
-      <p>অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন</p>
+        <h2>নিচের প্রশ্নগুলোতে ক্লিক করলে উত্তর পেয়ে যাবেন</h2>
+        <p>আপনার প্রয়োজনীয় প্রশ্নের উত্তর এখানে দেখুন</p>
     </div>
 
-    <div class="contact">
+    <div class="faq-box">
 
-      <div class="contact-box">
-
-        <h3>Royal Horse Milk</h3>
-
-        <div class="contact-item">
-          📞 ফোন: <strong>01349557254</strong>
+        <div class="faq-item active">
+            <button class="faq-question">
+                <span>−</span> কি ভাবে ব্যবহার করব?
+            </button>
+            <div class="faq-answer">
+                <p>প্যাকেটের নির্দেশনা অনুযায়ী ব্যবহার করুন। বিস্তারিত জানতে আমাদের সাথে যোগাযোগ করতে পারেন।</p>
+            </div>
         </div>
 
-        <div class="contact-item">
-          📧 Email: example@email.com
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>+</span> কার্যকারিতা কেমন?
+            </button>
+            <div class="faq-answer">
+                <p>ব্যক্তিভেদে অভিজ্ঞতা ভিন্ন হতে পারে। পণ্যটি নির্দেশনা অনুযায়ী ব্যবহার করুন।</p>
+            </div>
         </div>
 
-        <div class="contact-item">
-          📍 ঠিকানা: Dhaka, Bangladesh
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>+</span> সারা দেশে ডেলিভারি আছে?
+            </button>
+            <div class="faq-answer">
+                <p>বাংলাদেশের বিভিন্ন এলাকায় ডেলিভারির ব্যবস্থা রয়েছে। অর্ডারের সময় বিস্তারিত জানানো হবে।</p>
+            </div>
         </div>
 
-        <div class="contact-item">
-          🕐 প্রতিদিন: সকাল ৯টা — রাত ১০টা
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>+</span> পেমেন্ট কীভাবে করব?
+            </button>
+            <div class="faq-answer">
+                <p>অর্ডারের পর আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করে বিস্তারিত জানাবেন।</p>
+            </div>
         </div>
 
-      </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>+</span> পণ্যটি কত দিনে ডেলিভারি হবে?
+            </button>
+            <div class="faq-answer">
+                <p>আপনার অবস্থান ও কুরিয়ার সার্ভিসের উপর ডেলিভারির সময় নির্ভর করবে।</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- ================= IMAGE GALLERY ================= -->
+
+<section class="gallery-section" id="gallery">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>আমাদের পণ্যের কিছু ছবি</h2>
+        <p>আমাদের পণ্য ও গ্রাহকদের অভিজ্ঞতার কিছু মুহূর্ত</p>
+    </div>
+
+    <div class="gallery-slider">
+
+        <div class="gallery-track" id="galleryTrack">
+
+            <!-- ===== প্রথম Slide ===== -->
+            <div class="gallery-slide">
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <img src="gallery1.jpg" alt="Gallery Image 1">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="gallery2.jpg" alt="Gallery Image 2">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="gallery3.jpg" alt="Gallery Image 3">
+                    </div>
+
+                </div>
+            </div>
 
 
-      <div class="contact-box">
+            <!-- ===== দ্বিতীয় Slide ===== -->
+            <div class="gallery-slide">
+                <div class="gallery-grid">
 
-        <h3>অর্ডার ফর্ম</h3>
+                    <div class="gallery-item">
+                        <img src="gallery4.jpg" alt="Gallery Image 4">
+                    </div>
 
-        <form onsubmit="submitOrder(event)">
+                    <div class="gallery-item">
+                        <img src="gallery5.jpg" alt="Gallery Image 5">
+                    </div>
 
-          <input
-            type="text"
-            id="name"
-            placeholder="আপনার নাম"
-            required
-          >
+                    <div class="gallery-item">
+                        <img src="gallery6.jpg" alt="Gallery Image 6">
+                    </div>
 
-          <input
-            type="tel"
-            id="phone"
-            placeholder="মোবাইল নম্বর"
-            required
-          >
+                </div>
+            </div>
 
-          <textarea
-            id="message"
-            placeholder="আপনার অর্ডারের বিস্তারিত লিখুন"
-            required
-          ></textarea>
 
-          <button type="submit" class="btn">
-            অর্ডার পাঠান
-          </button>
+            <!-- ===== তৃতীয় Slide ===== -->
+            <div class="gallery-slide">
+                <div class="gallery-grid">
 
-        </form>
+                    <div class="gallery-item">
+                        <img src="gallery7.jpg" alt="Gallery Image 7">
+                    </div>
 
-      </div>
+                    <div class="gallery-item">
+                        <img src="gallery8.jpg" alt="Gallery Image 8">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="gallery9.jpg" alt="Gallery Image 9">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- নিচের Carousel Indicator -->
+        <div class="gallery-controls">
+
+            <span class="gallery-dot active" onclick="showGallery(0)"></span>
+            <span class="gallery-dot" onclick="showGallery(1)"></span>
+            <span class="gallery-dot" onclick="showGallery(2)"></span>
+
+        </div>
 
     </div>
 
-  </section>
+</div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="review-section" id="review">
+<div class="container">
+
+    <div class="section-title">
+        <h2>গ্রাহকদের ভালোবাসা</h2>
+        <p>আমাদের গ্রাহকদের অভিজ্ঞতা</p>
+    </div>
+
+    <div class="review-carousel">
+
+        <div class="review-track" id="reviewTrack">
+
+            <div class="review-slide">
+                <div class="review-card">
+                    <img class="review-photo" src="review1.jpg">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p>“পণ্যের সার্ভিস ও অর্ডার প্রক্রিয়া নিয়ে আমি সন্তুষ্ট।”</p>
+                        <div class="review-name">— একজন গ্রাহক</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-slide">
+                <div class="review-card">
+                    <img class="review-photo" src="review2.jpg">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p>“দ্রুত যোগাযোগ ও সুন্দর সার্ভিস পেয়েছি।”</p>
+                        <div class="review-name">— একজন গ্রাহক</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-slide">
+                <div class="review-card">
+                    <img class="review-photo" src="review3.jpg">
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <p>“অর্ডার করা খুব সহজ ছিল এবং সার্ভিস ভালো লেগেছে।”</p>
+                        <div class="review-name">— একজন গ্রাহক</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div>
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+<!-- ================= ORDER BOX ================= -->
 
-    <h2>Royal Horse Milk</h2>
+<section class="order-section" id="order">
+<div class="container">
 
-    <p>
-      © 2026 Royal Horse Milk. All Rights Reserved.
-    </p>
+    <div class="section-title">
+        <h2>বিশেষ অফারে অর্ডার করুন</h2>
+        <p>আপনার পছন্দের প্যাকেজ নির্বাচন করুন</p>
+    </div>
 
-  </footer>
+    <div class="checkout-box">
+
+        <div class="checkout-title">
+            Buy Original Royal Horse Milk Powder
+        </div>
+
+        <div class="package-select-grid">
+
+            <label class="package-option selected">
+                <input type="radio" name="package"
+                       value="5 PCS - ৳১,২৫০"
+                       data-price="1250" checked>
+
+                <div>
+                    <h3>Royal Horse Milk | 5 PCS</h3>
+                    <p>৳ ১,২৫০</p>
+                </div>
+            </label>
+
+            <label class="package-option">
+                <input type="radio" name="package"
+                       value="10 PCS - ৳১,৬০০"
+                       data-price="1600">
+
+                <div>
+                    <h3>Royal Horse Milk | 10 PCS</h3>
+                    <p>৳ ১,৬০০</p>
+                </div>
+            </label>
+
+        </div>
 
 
-  <!-- WHATSAPP -->
-  <a
-    class="whatsapp"
-    href="https://wa.me/8801349557254"
-    target="_blank"
-    title="WhatsApp"
-  >
-    ☎
-  </a>
+        <div class="checkout-grid">
+
+            <div>
+                <h3 class="billing-title">Billing details</h3>
+
+                <div class="billing-form">
+
+                    <label>আপনার নাম *</label>
+                    <input type="text" id="name">
+
+                    <label>মোবাইল নম্বর *</label>
+                    <input type="tel" id="phone" placeholder="01XXXXXXXXX">
+
+                    <label>জেলা *</label>
+                    <input type="text" id="district" placeholder="আপনার জেলার নাম">
+
+                    <label>থানা / উপজেলা *</label>
+                    <input type="text" id="thana" placeholder="থানা বা উপজেলার নাম">
+
+                    <label>সম্পূর্ণ ঠিকানা *</label>
+                    <textarea id="address" rows="3"></textarea>
+
+                </div>
+            </div>
 
 
-  <script>
+            <div>
+                <h3 class="summary-title">Your order</h3>
 
-    /* MOBILE MENU */
+                <div class="summary-row">
+                    <span>Product</span>
+                    <span>Subtotal</span>
+                </div>
 
-    function toggleMenu() {
+                <div class="summary-row">
+                    <div class="summary-product">
+                        <img src="product.jpg">
+                        <span id="summaryPackage">Royal Horse Milk × 5 PCS</span>
+                    </div>
+                    <span id="summaryPrice">৳ 1,250</span>
+                </div>
 
-      document
-        .getElementById("navMenu")
-        .classList
-        .toggle("active");
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span>Free delivery</span>
+                </div>
 
-    }
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="totalPrice">৳ 1,250</span>
+                </div>
+
+                <button class="order-now-btn" id="orderNow">
+                    🔒 Order Now | ৳ 1,250
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
 
 
-    /* PRODUCT ORDER */
+<!-- ================= FOOTER ================= -->
 
-    function orderProduct(product) {
+<footer>
+<div class="container">
 
-      document.getElementById("message").value =
-        "আমি " + product + " অর্ডার করতে চাই।";
+    <div class="footer-items">
+        <span>🏆 প্রিমিয়াম পণ্য</span>
+        <span>💵 ক্যাশ অন ডেলিভারি</span>
+        <span>🚚 সারা বাংলাদেশে ডেলিভারি</span>
+    </div>
 
-      document
-        .getElementById("contact")
-        .scrollIntoView({
-          behavior: "smooth"
+    <p>© 2026 Royal Horse Milk | All Rights Reserved.</p>
+
+</div>
+</footer>
+
+<a href="#order" class="float-whatsapp">☏</a>
+
+
+<script>
+
+/* FAQ */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    item.querySelector(".faq-question").addEventListener("click", function(){
+
+        const active = item.classList.contains("active");
+
+        faqItems.forEach(other => {
+            other.classList.remove("active");
+            other.querySelector(".faq-question span").textContent = "+";
         });
 
+        if(!active){
+            item.classList.add("active");
+            item.querySelector(".faq-question span").textContent = "−";
+        }
+
+    });
+
+});
+
+
+
+/* REVIEW CAROUSEL */
+
+let reviewIndex = 0;
+const reviewTrack = document.getElementById("reviewTrack");
+const dots = document.querySelectorAll(".dot");
+
+function showReview(index){
+    reviewTrack.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((dot,i)=>{
+        dot.classList.toggle("active",i === index);
+    });
+}
+
+setInterval(()=>{
+    reviewIndex = (reviewIndex + 1) % 3;
+    showReview(reviewIndex);
+},5000);
+
+
+/* PACKAGE CHANGE */
+
+const packageRadios =
+document.querySelectorAll('input[name="package"]');
+
+packageRadios.forEach(radio => {
+
+    radio.addEventListener("change",function(){
+
+        document.querySelectorAll(".package-option")
+        .forEach(box=>box.classList.remove("selected"));
+
+        this.closest(".package-option")
+        .classList.add("selected");
+
+        const price = this.dataset.price;
+
+        const formatted = "৳ " +
+        Number(price).toLocaleString("en-US");
+
+        const pcs = price === "1250" ? "5 PCS" : "10 PCS";
+
+        document.getElementById("summaryPackage").textContent =
+        "Royal Horse Milk × " + pcs;
+
+        document.getElementById("summaryPrice").textContent = formatted;
+        document.getElementById("totalPrice").textContent = formatted;
+        document.getElementById("orderNow").textContent =
+        "🔒 Order Now | " + formatted;
+
+    });
+
+});
+
+
+/* WHATSAPP ORDER */
+
+const WHATSAPP_NUMBER = "8801608910261";
+
+document.getElementById("orderNow").addEventListener("click",function(){
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const district = document.getElementById("district").value.trim();
+    const thana = document.getElementById("thana").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    if(!name || !phone || !district || !thana || !address){
+        alert("দয়া করে নাম, মোবাইল নম্বর, জেলা, থানা ও সম্পূর্ণ ঠিকানা পূরণ করুন।");
+        return;
     }
 
+    const selected =
+    document.querySelector('input[name="package"]:checked');
 
-    /* ORDER FORM */
+    const message =
+`🛒 *নতুন অর্ডার*
 
-    function submitOrder(event) {
+📦 প্রোডাক্ট: Royal Horse Milk
+🎁 প্যাকেজ: ${selected.value}
+💰 মূল্য: ৳ ${selected.dataset.price}
 
-      event.preventDefault();
+👤 নাম: ${name}
+📱 মোবাইল: ${phone}
+📍 জেলা: ${district}
+🏘️ থানা: ${thana}
+🏠 ঠিকানা: ${address}`;
 
-      const name =
-        document.getElementById("name").value;
-
-      const phone =
-        document.getElementById("phone").value;
-
-      const message =
-        document.getElementById("message").value;
-
-      const whatsappNumber = "8801349557254";
-
-      const text =
-        "Royal Horse Milk Order%0A%0A" +
-        "নাম: " + encodeURIComponent(name) +
-        "%0Aফোন: " + encodeURIComponent(phone) +
-        "%0Aঅর্ডার: " + encodeURIComponent(message);
-
-      window.open(
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        text,
+    window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message),
         "_blank"
-      );
+    );
 
-    }
+});
 
-  </script>
+
+/* ================= IMAGE GALLERY CAROUSEL ================= */
+
+let galleryIndex = 0;
+
+const galleryTrack = document.getElementById("galleryTrack");
+const galleryDots = document.querySelectorAll(".gallery-dot");
+
+function showGallery(index){
+
+    galleryIndex = index;
+
+    galleryTrack.style.transform =
+        `translateX(-${galleryIndex * 100}%)`;
+
+    galleryDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === galleryIndex);
+    });
+
+}
+
+/* প্রতি ৪ সেকেন্ড পর অটো স্লাইড */
+
+setInterval(() => {
+
+    galleryIndex = (galleryIndex + 1) % 3;
+
+    showGallery(galleryIndex);
+
+}, 4000);
+
+
+
+
+</script>
+
 
 </body>
 </html>
