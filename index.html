@@ -260,19 +260,87 @@ section{padding:65px 0;}
 
 /* ================= VIDEO ================= */
 
-.video-section{background:#f7f5f0;}
+.video-section{
+    background:
+        radial-gradient(circle at top left, rgba(199,139,24,.10), transparent 35%),
+        linear-gradient(135deg,#f7f5f0,#fff);
+    padding:75px 0;
+    overflow:hidden;
+}
+
+.video-section .section-title{
+    margin-bottom:32px;
+}
+
+.video-section .section-title h2{
+    position:relative;
+    display:inline-block;
+    font-size:34px;
+}
+
+.video-section .section-title h2::after{
+    content:"";
+    display:block;
+    width:55px;
+    height:3px;
+    margin:10px auto 0;
+    border-radius:10px;
+    background:linear-gradient(90deg,var(--green),var(--gold));
+}
 
 .video-box{
-    max-width:800px;
+    position:relative;
+    width:480px;
+    height:864px;
+    max-width:calc(100vw - 30px);
     margin:auto;
-    background:#333;
-    border-radius:14px;
-    overflow:hidden;
+    padding:7px;
+    background:linear-gradient(145deg,#123d2a,#c78b18,#08261a);
+    border-radius:28px;
+    box-shadow:
+        0 25px 60px rgba(8,38,26,.22),
+        0 8px 25px rgba(0,0,0,.12);
+}
+
+.video-box::before{
+    content:"";
+    position:absolute;
+    inset:2px;
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:26px;
+    pointer-events:none;
+    z-index:2;
 }
 
 .video-box video{
     width:100%;
+    height:100%;
     display:block;
+    object-fit:cover;
+    background:#111;
+    border-radius:21px;
+}
+
+@media(max-width:520px){
+    .video-section{
+        padding:55px 0;
+    }
+
+    .video-section .section-title h2{
+        font-size:28px;
+    }
+
+    .video-box{
+        width:calc(100vw - 28px);
+        height:calc((100vw - 28px) * 1.8);
+        max-height:864px;
+        padding:5px;
+        border-radius:22px;
+    }
+
+    .video-box video{
+        border-radius:17px;
+    }
 }
 
 /* =================================================
@@ -911,7 +979,7 @@ footer{
     </div>
 
     <div class="video-box">
-        <video controls poster="hero-product.jpg">
+        <video controls playsinline preload="metadata" poster="hero-product.jpg">
             <source src="video.mp4" type="video/mp4">
         </video>
     </div>
